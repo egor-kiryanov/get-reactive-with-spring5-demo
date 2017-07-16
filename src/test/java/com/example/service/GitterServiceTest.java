@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.mockito.Mockito;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
-import reactor.test.scheduler.VirtualTimeScheduler;
 
 import java.time.Duration;
 
@@ -26,7 +25,7 @@ public class GitterServiceTest {
 
         when(gitterClient.getMessages(any())).thenReturn(
                 Flux
-                        .interval(Duration.ofHours(1), VirtualTimeScheduler.getOrSet())
+                        .interval(Duration.ofHours(1))
                         .map(String::valueOf)
                         .map(ChatResponseFactory::message)
         );

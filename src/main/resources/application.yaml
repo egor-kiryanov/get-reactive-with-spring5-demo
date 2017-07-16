@@ -19,6 +19,6 @@ spring:
 gitter:
   api:
     endpoint: https://stream.gitter.im/
-    messages-resource: rooms/591ca8acd73408ce4f6049c1/chatMessages
+    messages-resource: rooms/596a67f6d73408ce4f6d4f66/chatMessages
     auth:
       token: ${GITTER_TOKEN}
