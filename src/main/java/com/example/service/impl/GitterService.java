@@ -15,10 +15,13 @@ public class GitterService implements ChatService<MessageResponse> {
 
     @Autowired
     public GitterService(GitterClient gitterClient) {
-        gitterMessageSource = Flux.from(gitterClient.getMessages(null))
-                .onBackpressureBuffer()
-                .publish(1)
-                .autoConnect(0);
+        //todo provide direct connection to gitter client with subsequent source publisher
+        throw new UnsupportedOperationException();
+
+//        gitterMessageSource = Flux.from(gitterClient.getMessages(null))
+//                .onBackpressureBuffer()
+//                .publish(1)
+//                .autoConnect(0);
     }
 
     @Override
