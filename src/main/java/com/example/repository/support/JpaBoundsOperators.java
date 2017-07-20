@@ -28,14 +28,17 @@ public final class JpaBoundsOperators {
      */
     public static <S, V> Mono<V> mono(Mono<S> input, Function<? super Mono<S>, ? extends Publisher<V>> transformer) {
 
-        MonoProcessor<V> monoProcessor = MonoProcessor.create();
+        //todo add async bound using Mono Processor
+        throw new UnsupportedOperationException();
 
-        input
-                .publishOn(Schedulers.elastic())
-                .transform(transformer)
-                .subscribe(monoProcessor);
-
-        return monoProcessor.subscribeOn(Schedulers.elastic());
+//        MonoProcessor<V> monoProcessor = MonoProcessor.create();
+//
+//        input
+//                .publishOn(Schedulers.elastic())
+//                .transform(transformer)
+//                .subscribe(monoProcessor);
+//
+//        return monoProcessor.subscribeOn(Schedulers.elastic());
     }
 
     /**
