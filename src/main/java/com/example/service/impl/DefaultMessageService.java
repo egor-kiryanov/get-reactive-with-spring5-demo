@@ -28,7 +28,9 @@ public class DefaultMessageService implements MessageService {
 
     @Override
     public Flux<MessageVM> latest() {
+        //todo provide message emitting to downstream
+        throw new UnsupportedOperationException();
 
-        return chatClient.stream().transform(MessageMapper::toViewModelUnits);
+//        return chatClient.stream().transform(MessageMapper::toViewModelUnits);
     }
 }
